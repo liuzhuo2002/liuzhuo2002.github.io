@@ -18,8 +18,11 @@
 <meta property="og:image" content="http://example.com/2021/09/06/how-to-build-a-blog-with-hexo/node-v.png">
 <meta property="og:image" content="http://example.com/2021/09/06/how-to-build-a-blog-with-hexo/how-to-build-a-blog-with-hexo./http4000.png">
 <meta property="og:image" content="http://example.com/2021/09/06/how-to-build-a-blog-with-hexo/hexo.png">
+<meta property="og:image" content="http://example.com/2021/09/06/how-to-build-a-blog-with-hexo/deployer.png">
+<meta property="og:image" content="http://example.com/2021/09/06/how-to-build-a-blog-with-hexo/cleangd.png">
+<meta property="og:image" content="http://example.com/2021/09/06/how-to-build-a-blog-with-hexo/new.png">
 <meta property="article:published_time" content="2021-09-05T16:34:27.000Z">
-<meta property="article:modified_time" content="2021-09-07T06:32:15.488Z">
+<meta property="article:modified_time" content="2021-09-08T13:12:51.790Z">
 <meta property="article:author" content="Liuzhuo">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/2021/09/06/how-to-build-a-blog-with-hexo/git-version.png">
@@ -132,7 +135,8 @@
 <li><p>输入 hexo g &amp;&amp; hexo s (hexo server) ，打开 hexo 服务</p>
 </li>
 </ol>
-<p><img src="./how-to-build-a-blog-with-hexo./http4000.png"></p>
+<img src="./how-to-build-a-blog-with-hexo./http4000.png" style="zoom:150%;">
+
 <ol start="7">
 <li>在浏览器输入localhost:4000就可以看到你生成的博客了，大概如下</li>
 </ol>
@@ -152,18 +156,38 @@
 <li>点击 Add SSH key ,完成</li>
 </ol>
 <h2 id="将hexo部署到GitHub"><a href="#将hexo部署到GitHub" class="headerlink" title="将hexo部署到GitHub"></a>将hexo部署到GitHub</h2><ol>
-<li>进入你创建的 blog 文件夹，打开站点配置文件 _config.yml ，翻到最后，修改为<a href="%E4%BD%A0%E7%9A%84GitHub%E8%B4%A6%E6%88%B7%E5%90%8D">^yourgithubname</a></li>
+<li>进入你创建的 blog 文件夹，打开站点配置文件 _config.yml ，翻到最后，修改为</li>
 </ol>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">	type: git</span><br><span class="line">	repo: https://github.com/yourgithubname/yourgithubname.github.io.git</span><br><span class="line">	branch: master</span><br></pre></td></tr></table></figure>
 
+<p>其中，yourgithubname为你的GitHub账户名</p>
 <ol start="2">
-<li></li>
+<li>安装deploy-git，输入npm install hexo-deployer-git –save</li>
+</ol>
+<p><img src="/2021/09/06/how-to-build-a-blog-with-hexo/deployer.png"></p>
+<ol start="3">
+<li>部署到GitHub，输入 hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</li>
+</ol>
+<p><img src="/2021/09/06/how-to-build-a-blog-with-hexo/cleangd.png"></p>
+<ol start="4">
+<li>然后就可以在 <a target="_blank" rel="noopener" href="http://yourgithubname.github.io/">http://yourgithubname.github.io</a> 上看见你的博客啦</li>
+</ol>
+<h2 id="创建博客文章"><a href="#创建博客文章" class="headerlink" title="创建博客文章"></a>创建博客文章</h2><ol>
+<li>进入 git bash 中，输入 hexo new 文件名 ，（例如：创建一个名为newblog的博客）</li>
+</ol>
+<p><img src="/2021/09/06/how-to-build-a-blog-with-hexo/new.png"></p>
+<p>注：文件名最好不要用中文</p>
+<ol start="2">
+<li><p>在source文件夹中就可以看到你新创建的.md文件</p>
+</li>
+<li><p>编辑完成后，输入 hexo clean &amp;&amp; hexo g &amp;&amp; hexo d 即可完成</p>
+</li>
 </ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/09/06/how-to-build-a-blog-with-hexo/" data-id="ckt9pde3p0002vktkbji42ryi" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/09/06/how-to-build-a-blog-with-hexo/" data-id="cktbivgp00003f4tk05ebb94x" class="article-share-link">Share</a>
       
       
     </footer>
